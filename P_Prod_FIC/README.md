@@ -1,38 +1,130 @@
-# P_Prod_FIC
+\# 💰 Freelance Income Calculator
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Un outil web moderne et pratique pour les freelances et les auto-entrepreneurs, permettant de calculer instantanément le revenu net en tenant compte des taxes et des commissions des plateformes.
 
-## Recommended Browser Setup
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
 
-## Customize configuration
+\---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
 
-```sh
+\## ✨ Caractéristiques du projet
+
+
+
+\* \*\*Calcul instantané :\*\* Grâce à la réactivité de Vue.js et aux propriétés calculées (`computed`), tous les indicateurs financiers sont recalculés à la volée lors de la modification de n'importe quel paramètre.
+
+\* \*\*Prise en compte de tous les frais :\*\* Calcul du revenu brut, des cotisations fiscales et des commissions des services ou des plateformes de freelance.
+
+\* \*\*Sauvegarde des données :\*\* L'historique des calculs est enregistré dans le navigateur (`localStorage`), de sorte que les données saisies ne sont pas perdues lors du rechargement de la page.
+
+\* \*\*Design adaptatif :\*\* L'interface est optimisée pour fonctionner aussi bien sur ordinateurs que sur appareils mobiles.
+
+
+
+\---
+
+
+
+\## 🛠 Technologies
+
+
+
+Le projet a été développé en utilisant une stack moderne :
+
+
+
+\* \*\*Framework :\*\* Vue.js 3 (Composition API)
+
+\* \*\*Outil de build :\*\* Vite
+
+\* \*\*Design :\*\* Tailwind CSS
+
+\* \*\*Stockage des données :\*\* Browser LocalStorage
+
+
+
+\---
+
+
+
+\## 📁 Structure du projet
+
+
+
+```text
+
+src/
+
+├── components/
+
+│   ├── IncomeForm.vue    # Formulaire de saisie des paramètres (taux, heures, taxes)
+
+│   ├── SummaryCard.vue   # Bloc avec les calculs finaux (Revenu Brut / Net)
+
+│   └── HistoryList.vue   # Liste des calculs sauvegardés
+
+├── App.vue               # Conteneur principal de l'application
+
+└── main.js               # Point d'entrée
+
+
+
+🚀 Installation et lancement
+
+Pour lancer le projet localement, suivez les étapes ci-dessous :
+
+
+
+Clonez le dépôt :
+
+
+
+Bash
+
+git clone \[https://github.com/votre-identifiant/freelance-income-calculator.git](https://github.com/votre-identifiant/freelance-income-calculator.git)
+
+Accédez au dossier du projet :
+
+
+
+Bash
+
+cd freelance-income-calculator
+
+Installez les dépendances :
+
+
+
+Bash
+
 npm install
-```
 
-### Compile and Hot-Reload for Development
+Lancez le projet en mode développement :
 
-```sh
+
+
+Bash
+
 npm run dev
-```
 
-### Compile and Minify for Production
+Compilez le projet pour la production :
 
-```sh
+
+
+Bash
+
 npm run build
-```
+
+🌐 Lien de déploiement
+
+Vous pouvez voir l'application en ligne ici : 👉 🔗 Ouvrir le site
+
+
+
+👨‍💻 Auteur
+
+Créé dans le cadre du développement du projet. Vos retours et suggestions sont les bienvenus !
+
