@@ -1,50 +1,44 @@
-📋 Подробный To-Do лист для разработки (на 18 часов)
-🛠 Этап 1: Подготовка и структура (120 минут / 2 часа)
-[ ] Инициализировать проект через Vite + Vue 3 (npm create vite@latest).
+# 📋 To-Do list détaillé pour le développement (18 heures)
 
-[ ] Установить и настроить CSS-фреймворк для быстрого дизайна (например, Tailwind CSS или Bootstrap/Bulma).
+---
 
-[ ] Продумать структуру компонентов во Vue:
+## 🛠 Étape 1 : Préparation et structure (120 minutes / 2 heures)
 
-App.vue (главный контейнер)
+- [ ] Initialiser le projet via Vite + Vue 3 (`npm create vite@latest`).
+- [ ] Installer et configurer un framework CSS pour un design rapide (par exemple, Tailwind CSS).
+- [ ] Réfléchir à la structure des composants dans Vue :
+  - `App.vue` (conteneur principal)
+  - `IncomeForm.vue` (formulaire de saisie : taux, heures, taxes)
+  - `SummaryCard.vue` (bloc avec les calculs finaux)
+  - `HistoryList.vue` (liste des calculs sauvegardés)
 
-IncomeForm.vue (форма ввода данных: ставки, часы, налоги)
+---
 
-SummaryCard.vue (блок с итоговыми расчетами)
+## 💻 Étape 2 : Création du formulaire et de la logique de calcul (480 minutes / 8 heures)
 
-HistoryList.vue (список сохраненных расчетов)
+- [ ] Intégrer les champs de saisie pour les paramètres principaux :
+  - Taux horaire ou tarif fixe par projet.
+  - Nombre d'heures / jours travaillés.
+  - Pourcentage de taxe (par exemple, auto-entrepreneur ou impôt sur le revenu).
+  - Commission de la plateforme (si le travail passe par des plateformes freelance, par exemple 10 à 20 %).
+- [ ] Écrire la logique réactive à l'aide de `ref` / `reactive` et de propriétés calculées (`computed`) afin que le calcul soit instantané lors de la modification de n'importe quel champ.
+- [ ] Mettre en place les formules :
+  - **Revenu brut (Gross Income)** = Taux × Heures.
+  - **Montant des taxes et des commissions**.
+  - **Revenu net (Net Income)** = Revenu brut moins les taxes et les commissions.
 
-💻 Этап 2: Создание формы и логики расчета (480 минут / 8 часов)
-[ ] Сверстать поля ввода для основных параметров:
+---
 
-Часовая ставка или фиксированная плата за проект.
+## 🎨 Étape 3 : Interface et sauvegarde des données (240 minutes / 4 heures)
 
-Количество отработанных часов / дней.
+- [ ] Ajouter un affichage esthétique des montants finaux (chiffres en gros, icônes de devises).
+- [ ] Implémenter la sauvegarde de l'historique des calculs ou des paramètres actuels dans le navigateur via `localStorage`, pour que les données ne soient pas perdues lors du rechargement de la page.
+- [ ] Ajouter un bouton « Réinitialiser » et une validation des champs (pour empêcher la saisie de nombres négatifs ou de lettres à la place de chiffres).
 
-Процент налога (например, самозанятость 4-6% или подоходный налог).
+---
 
-Комиссия платформы (если работа через фриланс-биржи, например, 10–20%).
+## 🚀 Étape 4 : Finition, tests et déploiement (240 minutes / 4 heures)
 
-[ ] Написать реактивную логику с помощью ref / reactive и вычисляемых свойств (computed), чтобы расчет происходил мгновенно при изменении любого поля.
-
-[ ] Реализовать формулы:
-
-Валовый доход (Gross Income) = Ставка × Часы.
-
-Сумма налога и комиссий.
-
-Чистый доход на руки (Net Income) = Валовый доход минус налоги и комиссии.
-
-🎨 Этап 3: Интерфейс и сохранение данных (240 минут / 4 часа)
-[ ] Добавить красивое отображение итоговых сумм (крупные цифры, иконки валют).
-
-[ ] Реализовать сохранение истории расчетов или текущих настроек в браузере через localStorage, чтобы данные не пропадали при перезагрузке страницы.
-
-[ ] Добавить кнопку «Сбросить» и валидацию полей (чтобы нельзя было ввести отрицательные числа или буквы вместо цифр).
-
-🚀 Этап 4: Полировка, тестирование и деплой (240 минут / 4 часа)
-[ ] Проверить верстку на мобильных устройствах (адаптивность через медиа-запросы или классы Tailwind).
-
-[ ] Убедиться в отсутствии багов в расчетах при крайних значениях (нули, пустые поля).
-
-[ ] Собрать проект (npm run build) и опубликовать его на бесплатный хостинг (например, Vercel или Netlify).
+- [ ] Vérifier la mise en page sur les appareils mobiles (adaptativité via les classes Tailwind).
+- [ ] S'assurer de l'absence de bugs dans les calculs lors de valeurs extrêmes (zéros, champs vides).
+- [ ] Compiler le projet (`npm run build`) et le publier sur un hébergement gratuit (par exemple, Vercel ou Netlify).

@@ -1,82 +1,92 @@
-💰 Freelance Income Calculator
-
-Современный и удобный веб-инструмент для фрилансеров и самозанятых, позволяющий мгновенно рассчитывать чистый доход с учетом налогов и комиссий платформ.
+\# 💰 Freelance Income Calculator
 
 
 
-✨ Особенности проекта
-
-Мгновенный расчет: Благодаря реактивности Vue.js и вычисляемым свойствам (computed), все финансовые показатели пересчитываются на лету при изменении любого параметра.
+Un outil web moderne et pratique pour les freelances et les auto-entrepreneurs, permettant de calculer instantanément le revenu net en tenant compte des taxes et des commissions des plateformes.
 
 
 
-Учет всех сборов: Подсчет валового дохода, отчислений на налоги и комиссий сервисов или фриланс-бирж.
+\---
 
 
 
-Сохранение данных: История расчетов сохраняется в браузере (localStorage), поэтому введенные данные не пропадут при перезагрузке страницы.
+\## ✨ Caractéristiques du projet
 
 
 
-Адаптивный дизайн: Интерфейс оптимизирован для работы как на компьютерах, так и на мобильных устройствах.
+\* \*\*Calcul instantané :\*\* Grâce à la réactivité de Vue.js et aux propriétés calculées (`computed`), tous les indicateurs financiers sont recalculés à la volée lors de la modification de n'importe quel paramètre.
+
+\* \*\*Prise en compte de tous les frais :\*\* Calcul du revenu brut, des cotisations fiscales et des commissions des services ou des plateformes de freelance.
+
+\* \*\*Sauvegarde des données :\*\* L'historique des calculs est enregistré dans le navigateur (`localStorage`), de sorte que les données saisies ne sont pas perdues lors du rechargement de la page.
+
+\* \*\*Design adaptatif :\*\* L'interface est optimisée pour fonctionner aussi bien sur ordinateurs que sur appareils mobiles.
 
 
 
-🛠 Технологии
-
-Проект разработан с использованием современного стека:
+\---
 
 
 
-Фреймворк: Vue.js 3 (Composition API)
+\## 🛠 Technologies
 
 
 
-Сборщик: Vite
+Le projet a été développé en utilisant une stack moderne :
 
 
 
-Стилизация: Tailwind CSS
+\* \*\*Framework :\*\* Vue.js 3 (Composition API)
+
+\* \*\*Outil de build :\*\* Vite
+
+\* \*\*Design :\*\* Tailwind CSS
+
+\* \*\*Stockage des données :\*\* Browser LocalStorage
 
 
 
-Хранение данных: Browser LocalStorage
+\---
 
 
 
-📁 Структура проекта
+\## 📁 Structure du projet
 
-Plaintext
+
+
+```text
 
 src/
 
 ├── components/
 
-│   ├── IncomeForm.vue    # Форма ввода параметров (ставки, часы, налоги)
+│   ├── IncomeForm.vue    # Formulaire de saisie des paramètres (taux, heures, taxes)
 
-│   ├── SummaryCard.vue   # Блок с итоговыми расчетами (Gross / Net Income)
+│   ├── SummaryCard.vue   # Bloc avec les calculs finaux (Revenu Brut / Net)
 
-│   └── HistoryList.vue   # Список сохраненных расчетов
+│   └── HistoryList.vue   # Liste des calculs sauvegardés
 
-├── App.vue               # Главный контейнер приложения
+├── App.vue               # Conteneur principal de l'application
 
-└── main.js               # Точка входа
-
-🚀 Установка и запуск
-
-Чтобы запустить проект локально, выполните следующие шаги:
+└── main.js               # Point d'entrée
 
 
 
-Клонируйте репозиторий:
+🚀 Installation et lancement
+
+Pour lancer le projet localement, suivez les étapes ci-dessous :
+
+
+
+Clonez le dépôt :
 
 
 
 Bash
 
-git clone https://github.com/ваш-логин/freelance-income-calculator.git
+git clone \[https://github.com/votre-identifiant/freelance-income-calculator.git](https://github.com/votre-identifiant/freelance-income-calculator.git)
 
-Перейдите в папку проекта:
+Accédez au dossier du projet :
 
 
 
@@ -84,7 +94,7 @@ Bash
 
 cd freelance-income-calculator
 
-Установите зависимости:
+Installez les dépendances :
 
 
 
@@ -92,7 +102,7 @@ Bash
 
 npm install
 
-Запустите проект в режиме разработки:
+Lancez le projet en mode développement :
 
 
 
@@ -100,7 +110,7 @@ Bash
 
 npm run dev
 
-Соберите проект для продакшена:
+Compilez le projet pour la production :
 
 
 
@@ -108,13 +118,13 @@ Bash
 
 npm run build
 
-🌐 Ссылка на деплой
+🌐 Lien de déploiement
 
-Посмотреть работающее приложение можно здесь: 👉 🔗 Открыть сайт
+Vous pouvez voir l'application en ligne ici : 👉 🔗 Ouvrir le site
 
 
 
-👨‍💻 Автор
+👨‍💻 Auteur
 
-Создано в рамках разработки проекта. Буду рад вашим отзывам и предложениям!
+Créé dans le cadre du développement du projet. Vos retours et suggestions sont les bienvenus !
 
