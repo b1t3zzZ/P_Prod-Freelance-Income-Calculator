@@ -84,7 +84,7 @@ Clonez le dépôt :
 
 Bash
 
-git clone \[https://github.com/votre-identifiant/freelance-income-calculator.git](https://github.com/votre-identifiant/freelance-income-calculator.git)
+git clone https://github.com/votre-identifiant/freelance-income-calculator.git
 
 Accédez au dossier du projet :
 
