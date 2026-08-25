@@ -84,7 +84,7 @@ Clonez le dépôt :
 
 Bash
 
-git clone \[https://github.com/votre-identifiant/freelance-income-calculator.git](https://github.com/votre-identifiant/freelance-income-calculator.git)
+git clone https://github.com/b1t3zzZ/P_Prod-Freelance-Income-Calculator.git
 
 Accédez au dossier du projet :
 
@@ -92,7 +92,7 @@ Accédez au dossier du projet :
 
 Bash
 
-cd freelance-income-calculator
+P_Prod-Freelance-Income-Calculator
 
 Installez les dépendances :
 
