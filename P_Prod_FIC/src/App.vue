@@ -22,6 +22,7 @@ function SetCommission(val) {
   choiseCommission.value = val;
 }
 
+
 </script>
 <template>
 
