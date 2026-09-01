@@ -1,30 +1,27 @@
 <script setup>
-
 const props = defineProps({
-  SetForm: {
-    type: Function,
-    required: true
+  SetDuration:{
+    type:Function,
+    required:true
   }
 })
-
 </script>
 
 <template>
   <nav>
     <ul>
-      <li @click="SetForm('Total')">Prix Total</li>
-      <li @click="SetForm('CHFheure')">CHF par heure</li>
+      <li @click="SetDuration('Jour')">Jour</li>
+      <li @click="SetDuration('Heure')">Heure</li>
     </ul>
   </nav>
 </template>
 
 <style scoped>
-nav {
+nav{
   display: flex;
   justify-content: center;
 }
-
-ul {
+ul{
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -33,16 +30,14 @@ ul {
   border-radius: 10px;
 }
 
-li {
+li{
   list-style: none;
   background-color: #e2e2e2;
   padding: 15px;
   border-radius: 15px;
 
 }
-
-li:hover,
-li:active {
+li:hover, li:active{
   background-color: #d3d3d3;
   cursor: pointer;
   color: white;
