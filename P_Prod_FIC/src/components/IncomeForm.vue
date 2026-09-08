@@ -19,32 +19,15 @@ const props = defineProps({
 </template>
 
 <style scoped>
-nav {
-  display: flex;
-  justify-content: center;
+
+ul{
+  display:flex;
+  justify-content:space-around;
+  gap:20px;
+
+  list-style:none;
+  margin:0;
+  padding:0;
 }
 
-ul {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  background-color: #f4f4f4;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-li {
-  list-style: none;
-  background-color: #e2e2e2;
-  padding: 15px;
-  border-radius: 15px;
-
-}
-
-li:hover,
-li:active {
-  background-color: #d3d3d3;
-  cursor: pointer;
-  color: white;
-}
 </style>

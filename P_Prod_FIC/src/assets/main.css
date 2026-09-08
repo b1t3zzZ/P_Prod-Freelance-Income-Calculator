@@ -1,0 +1,47 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+    background-color:rgb(247, 247, 247);
+}
+
+h1 {
+    font-size: 39px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding: 5px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 31px;
+    font-weight: 400;
+    padding: 5px;
+    margin: 0;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+    padding: 5px;
+    margin: 0;
+}
+
+h6 {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgb(53, 53, 53);
+    padding: 5px;
+    margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
