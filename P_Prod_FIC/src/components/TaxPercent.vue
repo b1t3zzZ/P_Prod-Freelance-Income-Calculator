@@ -39,5 +39,11 @@ function BlockInput(){
 
 <style scoped>
 
+input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(168, 168, 168);
+    width: 97%;
+}
 
 </style>

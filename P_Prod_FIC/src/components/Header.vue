@@ -13,7 +13,7 @@
                     <rect width="32" height="32" fill="#FF0000" />
                     <path fill="#FFFFFF" d="M12 5h8v7h7v8h-7v7h-8v-7H5v-8h7z" />
                 </svg>
-                <p>SwissFinance</p>
+                <a href="../App.vue">SwissFinance</a>
             </div>
 
             <ul>
@@ -59,9 +59,11 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-p {
+a{
     font-size: 20px;
     font-weight: 600;
+    text-decoration: none;
+    color: #000000;
 }
 
 header>div {
@@ -94,7 +96,6 @@ ul>li {
     font-weight: 500;
     height: 100%;
     display:flex;
-    justfy-content:center;
     align-items:center;
 }
 li:hover {
@@ -122,6 +123,4 @@ select {
     outline: none;
     background: transparent;
 }
-
-option {}
 </style>
