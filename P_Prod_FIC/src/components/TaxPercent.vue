@@ -33,7 +33,6 @@ function BlockInput(){
   <div>
     <input v-model.number="numberOfInput" type="number" min="0" max="100" @input="BlockInput" placeholder="0">
   </div>
-  
 
 </template>
 
@@ -43,7 +42,7 @@ input {
     padding: 5px;
     border-radius: 5px;
     border: 2px solid rgb(168, 168, 168);
-    width: 97%;
+    width: 50px;
 }
 
 </style>
