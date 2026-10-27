@@ -13,23 +13,44 @@ let sommeReduction = ref(0);
 let pureSome = ref(0);
 let periode = ref(0);
 let somme = ref(0);
-let sommeTotal = ref(0)
+let sommeTotal = ref(0);
+
+let hourlyIncome = ref(0);
+let weeklyIncome = ref(0);
+let monthlyIncome = ref(0);
+let annualIncome = ref(0);
 
 function CalculerIncome() {
-    if (choiseIncome.value === 'CHFheure' && (SetTax && SetCommission)) {
+    if (choiseIncome.value === 'CHFheure') {
 
         grossIncome.value = somme.value * periode.value;
         sommeReduction.value = choiseTax.value + choiseCommission.value;
         pureSome.value = grossIncome.value * (1 - (sommeReduction.value / 100));
 
+        if (choiseDuration.value === 'Heure') {
+            let netRate = somme.value * (1 - (sommeReduction.value / 100));
+            hourlyIncome.value = (Math.round(netRate * 100) / 100)/periode.value;
+            weeklyIncome.value = (Math.round(netRate * 40 * 100) / 100)/periode.value;                          //40 часов в неделю
+            monthlyIncome.value = (Math.round(weeklyIncome.value * 4 * 100) / 100)/periode.value;
+            annualIncome.value = (Math.round(monthlyIncome.value * 12 * 100) / 100)/periode.value;
+        } else if (choiseDuration.value === 'Jour') {
+            let netDay = somme.value * (1 - (sommeReduction.value / 100));
+            hourlyIncome.value = (Math.round((netDay / 8) * 100) / 100)/periode.value;
+            weeklyIncome.value = (Math.round(netDay * 5 * 100) / 100)/periode.value;
+            monthlyIncome.value = (Math.round(weeklyIncome.value * 4 * 100) / 100)/periode.value;
+            annualIncome.value = (Math.round(monthlyIncome.value * 12 * 100) / 100)/periode.value;
+        }
     }
-
     if (choiseIncome.value === 'Total' && (SetTax && SetCommission)) {
         grossIncome.value = sommeTotal.value;
         sommeReduction.value = choiseTax.value + choiseCommission.value;
         pureSome.value = grossIncome.value * (1 - (sommeReduction.value / 100));
-    }
 
+        monthlyIncome.value = Math.round(pureSome.value * 100) / 100;
+        weeklyIncome.value = Math.round((pureSome.value / 4) * 100) / 100;
+        hourlyIncome.value = Math.round((weeklyIncome.value / 40) * 100) / 100;
+        annualIncome.value = Math.round(monthlyIncome.value * 12 * 100) / 100;
+    }
     return pureSome.value;
 }
 
@@ -45,8 +66,6 @@ function SetTax(val) {
 function SetCommission(val) {
     choiseCommission.value = val;
 }
-
-
 </script>
 <template>
 
@@ -160,36 +179,56 @@ function SetCommission(val) {
             </fieldset>
 
             <fieldset class="secondField">
-                <div>
+                <div class="income-header">
                     <h2>Your income</h2>
                 </div>
                 <div class="table-de-valeurs">
                     <div class="row-de-valeur">
-                        <img src="../assets/clock.svg" alt="Hourly">
-                        <p class="ml-8">Hourly</p>
-                        <span>CHF</span>
+                        <div class="row-left">
+                            <img src="../assets/clock.svg" alt="Hourly">
+                            <p>Hourly</p>
+                        </div>
+                        <div class="row-right">
+                            <span class="income-val">{{ hourlyIncome }}</span>
+                            <span class="currency-tag">CHF</span>
+                        </div>
+                    </div>
 
-                    </div>
                     <div class="row-de-valeur">
-                        <img src="../assets/calendar-trend.svg" alt="Weekly">
-                        <p class="ml-8">Weekly</p>
-                        <span>CHF</span>
+                        <div class="row-left">
+                            <img src="../assets/calendar-trend.svg" alt="Weekly">
+                            <p>Weekly</p>
+                        </div>
+                        <div class="row-right">
+                            <span class="income-val">{{ weeklyIncome }}</span>
+                            <span class="currency-tag">CHF</span>
+                        </div>
                     </div>
+
                     <div class="row-de-valeur">
-                        <img src="../assets/calendar-days.svg" alt="Monthly">
-                        <p class="ml-8">Monthly</p>
-                        <span>CHF</span>
+                        <div class="row-left">
+                            <img src="../assets/calendar-days.svg" alt="Monthly">
+                            <p>Monthly</p>
+                        </div>
+                        <div class="row-right">
+                            <span class="income-val">{{ monthlyIncome }}</span>
+                            <span class="currency-tag">CHF</span>
+                        </div>
                     </div>
+
                     <div class="row-de-valeur">
-                        <img src="../assets/chart-bars.svg" alt="Annual">
-                        <p class="ml-8 ">Annual</p>
-                        <span>CHF</span>
+                        <div class="row-left">
+                            <img src="../assets/chart-bars.svg" alt="Annual">
+                            <p>Annual</p>
+                        </div>
+                        <div class="row-right">
+                            <span class="income-val">{{ annualIncome }}</span>
+                            <span class="currency-tag">CHF</span>
+                        </div>
                     </div>
                 </div>
 
             </fieldset>
-
-
 
         </section>
 
@@ -485,6 +524,27 @@ button:active {
     box-shadow: 0 2px 6px rgba(255, 0, 0, 0.2);
 }
 
+.secondField {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 28px;
+    height: fit-content;
+}
+
+.income-header {
+    margin-bottom: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.income-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
 .table-de-valeurs {
     display: flex;
     flex-direction: column;
@@ -492,5 +552,51 @@ button:active {
 
 .row-de-valeur {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.row-de-valeur:last-child {
+    border-bottom: none;
+}
+
+.row-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.row-left img {
+    width: 44px;
+    height: 44px;
+    display: block;
+}
+
+.row-left p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    margin: 0;
+    padding: 0;
+}
+
+.row-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.income-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.currency-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
 }
 </style>
